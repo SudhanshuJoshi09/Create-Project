@@ -18,7 +18,7 @@ def main(repo_name):
     """ The main funtion. """
 
     # Getting the personal details.
-    email, password = parse_info('credfile')
+    email, password = parse_info('~/Documents/Development/Create-Project/credfile')
 
     # Defining Web Browser.
     driver = webdriver.Chrome(ChromeDriverManager().install())
