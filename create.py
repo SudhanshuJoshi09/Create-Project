@@ -2,7 +2,7 @@
 #------------------------------------------------------------------------
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import sys
+import sys, os
 #------------------------------------------------------------------------
 
 def parse_info(file_name):
@@ -17,8 +17,9 @@ def parse_info(file_name):
 def main(repo_name):
     """ The main funtion. """
 
+    os.chdir('~/.bin')
     # Getting the personal details.
-    email, password = parse_info('~/Documents/Development/Create-Project/credfile')
+    email, password = parse_info('credfile')
 
     # Defining Web Browser.
     driver = webdriver.Chrome(ChromeDriverManager().install())

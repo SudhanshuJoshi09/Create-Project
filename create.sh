@@ -12,10 +12,7 @@ function create_project() {
         mkdir $dir
         cd $dir
         git init
-        cd ~/.bin/Create-Project/
         python3 ~/.bin/Create-Project/create.py "$dir"
         git remote add origin git@github.com:SudhanshuJoshi09/$dir.git
-        cd
-        cd ./Documents/Development/$dir/
     fi
 }
