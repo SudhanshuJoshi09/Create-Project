@@ -5,12 +5,21 @@ from webdriver_manager.chrome import ChromeDriverManager
 # This is for command line arguments.
 import sys
 
+def parse_info(file_name):
+    """ Parses the info to email and password. """
+
+    cred = open(file_name, 'r')
+    email = cred.readline().strip('\n')
+    password = cred.readline().strip('\n')
+
+    return email, password
+
 def main(repo_name):
     """ The main funtion. """
 
+    # Getting the personal details.
+    email, password = parse_info('credfile')
 
-    email = input()
-    password = input()
     # Defining Web Browser.
     driver = webdriver.Chrome(ChromeDriverManager().install())
 
